@@ -31,3 +31,4 @@ Bank Holiday data comes from UK.gov's official resource [https://www.gov.uk/bank
 - it's interesting to note that for sign-up date registrations, the local date is respected
 - where-as for refund requests, the UK date/time is what matters
 - decided to create an adapter to convert data from the external source to an internal representation that's easier to work with (adapter design pattern)
+- at this point I'm only using the pseudo-code as a reference and will likely not improve it to match functionality

@@ -17,10 +17,6 @@ convertToDate / convertToTime
 - output european date format
 - output uk time
 
-verifyTOSType
-- check sign-up date
-- output TOS-type
-
 getTOSType
 - check timezone
 - call convertToDate

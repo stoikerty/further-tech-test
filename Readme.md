@@ -21,3 +21,8 @@ Bun was chosen for it's fast setup where you get prettier, typescript and test t
 At the moment, only UK bank holidays are supported. The assumption is that the bank holidays for the region `england-and-wales` are the correct dates.
 
 Bank Holiday data comes from UK.gov's official resource [https://www.gov.uk/bank-holidays.json](https://www.gov.uk/bank-holidays.json). Updates are manual, however a task can be run to periodically update the existing [uk-bank-holidays.json](./src/uk-bank-holidays.json) json-file.
+
+### Writing the DateTime conversion
+- decided on a `timezoneMapping` to facilitate working with clear timezones
+- initially planned to ouput a regular Date object but decided on using the `luxon` `DateTime`-type instead to support timezones in DateTime output
+- used [Online Conversion Tool](https://www.timeanddate.com/worldclock/converter.html?iso=20210201T170000&p1=137&p2=179&p3=195&p4=136) to manually verify times

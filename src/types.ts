@@ -15,13 +15,15 @@ export interface RefundRequest {
   'Refund Request Time': string;
 }
 
-export type TOSType = 'New' | 'Old';
+export type TOSType = 'new' | 'old';
 export interface InternalRefundRequest {
+  name: string;
   timeZone: string;
   signUp: DateTime;
   requestSource: RequestSource;
   TOSType: TOSType;
   investment: DateTime;
   refundRequest: DateTime;
-  acceptedRefundRequestTime: DateTime;
+  registeredRefundRequestTime: DateTime;
+  approvalTimeLimitHours: number;
 }

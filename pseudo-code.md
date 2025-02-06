@@ -1,3 +1,5 @@
+NOTE: This pseudo-code was only used at the start of the task to get a high-level overview of what to do, and was not changed to match the final code
+
 ### General Overview
 users request refunds
 

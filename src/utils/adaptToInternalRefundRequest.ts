@@ -1,5 +1,7 @@
 import convertToDateTime from './convertToDateTime';
 import getTOSType from './getTOSType';
+import getAvailableWorkingHour from './getAvailableWorkingHour';
+
 import type { RefundRequest, InternalRefundRequest } from '../types';
 import { TIMEZONE_MAPPINGS } from '../constants';
 
@@ -14,6 +16,14 @@ export default function adaptToInternalRefundRequest(
     targetTimeZone: timeZone,
   });
   const requestSource = request['Request Source'];
+  const refundRequest = convertToDateTime({
+    originalTimeZone: request['Customer Location (timezone)'],
+    originalDateTime: {
+      date: request['Refund Request Date'],
+      time: request['Refund Request Time'],
+    },
+  });
+
   return {
     timeZone,
     signUp,
@@ -23,12 +33,7 @@ export default function adaptToInternalRefundRequest(
       originalTimeZone: request['Customer Location (timezone)'],
       originalDateTime: { date: request['Investment Date'], time: request['Investment Time'] },
     }),
-    refundRequest: convertToDateTime({
-      originalTimeZone: request['Customer Location (timezone)'],
-      originalDateTime: {
-        date: request['Refund Request Date'],
-        time: request['Refund Request Time'],
-      },
-    }),
+    refundRequest,
+    acceptedRefundRequestTime: getAvailableWorkingHour(refundRequest),
   };
 }

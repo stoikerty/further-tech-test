@@ -23,4 +23,5 @@ export interface InternalRefundRequest {
   TOSType: TOSType;
   investment: DateTime;
   refundRequest: DateTime;
+  acceptedRefundRequestTime: DateTime;
 }

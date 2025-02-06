@@ -1,0 +1,15 @@
+{
+  "name": "further-tech-test",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun src/index",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

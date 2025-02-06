@@ -31,8 +31,9 @@ export default function convertToDateTime({
   }
 
   const format = originalTimeZone.startsWith('US') ? 'M/d/yyyy' : 'd/M/yyyy';
-  const time = originalDateTime.time || '00:00';
-  const dateTime = `${originalDateTime.date} ${time}`;
+  const hasTime = typeof originalDateTime.time === 'string';
+  const initialTime = hasTime ? originalDateTime.time : '00:00';
+  const dateTime = `${originalDateTime.date} ${initialTime}`;
   const dateTimeFormat = `${format} HH:mm`;
 
   const luxonDateTime = DateTime.fromFormat(dateTime, dateTimeFormat, { zone: timeZone });
@@ -43,5 +44,11 @@ export default function convertToDateTime({
     );
   }
 
-  return luxonDateTime.setZone(targetTimeZone);
+  const convertedTime = luxonDateTime.setZone(targetTimeZone);
+
+  if (!hasTime) {
+    return convertedTime.set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+  }
+
+  return convertedTime;
 }

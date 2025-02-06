@@ -26,3 +26,8 @@ Bank Holiday data comes from UK.gov's official resource [https://www.gov.uk/bank
 - decided on a `timezoneMapping` to facilitate working with clear timezones
 - initially planned to ouput a regular Date object but decided on using the `luxon` `DateTime`-type instead to support timezones in DateTime output
 - used [Online Conversion Tool](https://www.timeanddate.com/worldclock/converter.html?iso=20210201T170000&p1=137&p2=179&p3=195&p4=136) to manually verify times
+
+### Writing the main function
+- it's interesting to note that for sign-up date registrations, the local date is respected
+- where-as for refund requests, the UK date/time is what matters
+- decided to create an adapter to convert data from the external source to an internal representation that's easier to work with (adapter design pattern)

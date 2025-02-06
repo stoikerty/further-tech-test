@@ -1,13 +1,7 @@
 import { DateTime } from 'luxon';
+import { TIMEZONE_MAPPINGS } from '../constants';
 
-const TARGET_TIME_ZONE_DEFAULT = 'Europe/London';
-
-const timezoneMapping: Record<string, string> = {
-  'US (PST)': 'America/Los_Angeles',
-  'US (EST)': 'America/New_York',
-  'Europe (CET)': 'Europe/Paris',
-  'Europe (GMT)': 'Europe/London',
-};
+export const TARGET_TIME_ZONE_DEFAULT = 'Europe/London';
 
 interface DateTimeInput {
   date: string;
@@ -25,7 +19,7 @@ export default function convertToDateTime({
   originalDateTime,
   targetTimeZone = TARGET_TIME_ZONE_DEFAULT,
 }: Options): DateTime {
-  const timeZone = timezoneMapping[originalTimeZone];
+  const timeZone = TIMEZONE_MAPPINGS[originalTimeZone];
   if (!timeZone) {
     throw new Error(`Unknown time zone: ${originalTimeZone}`);
   }

@@ -4,6 +4,15 @@ This is a Tech Test for a financial company. See [tech task descripion](./furthe
 ## Requirements
 - Bun - see [install instructions](https://bun.sh/docs/installation)
 
+## Running the project
+```sh
+# run main script
+bun dev
+
+#run tests
+bun test
+```
+
 ### Overall thinking process
 #### Initial high-level thoughts
 - [read description of task](./further-tech-test-senior.md)

@@ -42,5 +42,5 @@ Bank Holiday data comes from UK.gov's official resource [https://www.gov.uk/bank
 - decided to create an adapter to convert data from the external source to an internal representation that's easier to work with (adapter design pattern)
 - at this point I'm only using the pseudo-code as a reference and will likely not improve it to match functionality
 - all date/time pairs are converted to UK time during the processing except signUp. this could be done differently though
-
+- decided not to add tests for other utils for now. The `convertToDateTime.test.ts`-test file should be sufficient to determine my general approach to testing (test main paths of method, test some edge-cases, test for errors)
 

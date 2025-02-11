@@ -1,6 +1,9 @@
 # Investor refund approvals
 This is a Tech Test for a financial company. See [tech task descripion](./further-tech-test-senior.md)
 
+The project is available to view on the following URL:
+[https://further-tech-test-gv1v.vercel.app/](https://further-tech-test-gv1v.vercel.app/)
+
 ## Requirements
 - Bun - see [install instructions](https://bun.sh/docs/installation)
 
@@ -46,3 +49,5 @@ Bank Holiday data comes from UK.gov's official resource [https://www.gov.uk/bank
 
 ### Creating a Frontend UI
 - moved over project to use Next.js, starting with a blank base to work from
+- added a table with some simple branding, and a navigation bar
+- configured vercel for automatic deployment

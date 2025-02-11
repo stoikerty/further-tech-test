@@ -1,8 +1,8 @@
 import refundRequests from './refund-requests.json';
 import adaptToInternalRefundRequest from './utils/adaptToInternalRefundRequest';
-import type { RefundRequest, TOSType } from './types';
+import type { RefundRequest } from './types';
 
-(refundRequests as RefundRequest[]).forEach((request) => {
+export default (refundRequests as RefundRequest[]).map((request) => {
   const internalRefundRequest = adaptToInternalRefundRequest(request);
   const { name, investment, registeredRefundRequestTime, approvalTimeLimitHours } =
     internalRefundRequest;
@@ -13,4 +13,10 @@ import type { RefundRequest, TOSType } from './types';
   console.log(`${name}: ${approved ? 'Approved' : 'Denied'}`);
   console.log(`(Time diff: ${hoursDifference}h vs allowed ${approvalTimeLimitHours}h)`);
   console.log(internalRefundRequest, '\n');
+  return {
+    name,
+    internalRefundRequest,
+    approved,
+    hoursDifference,
+  };
 });

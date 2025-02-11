@@ -44,3 +44,5 @@ Bank Holiday data comes from UK.gov's official resource [https://www.gov.uk/bank
 - all date/time pairs are converted to UK time during the processing except signUp. this could be done differently though
 - decided not to add tests for other utils for now. The `convertToDateTime.test.ts`-test file should be sufficient to determine my general approach to testing (test main paths of method, test some edge-cases, test for errors)
 
+### Creating a Frontend UI
+- moved over project to use Next.js, starting with a blank base to work from

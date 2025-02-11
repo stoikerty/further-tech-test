@@ -10,11 +10,9 @@ export default (refundRequests as RefundRequest[]).map((request) => {
   const hoursDifference = registeredRefundRequestTime.diff(investment, 'hours').hours;
   const approved = hoursDifference <= approvalTimeLimitHours;
 
-  console.log(`${name}: ${approved ? 'Approved' : 'Denied'}`);
-  console.log(`(Time diff: ${hoursDifference}h vs allowed ${approvalTimeLimitHours}h)`);
-  console.log(internalRefundRequest, '\n');
   return {
     name,
+    originalRequest: request,
     internalRefundRequest,
     approved,
     hoursDifference,

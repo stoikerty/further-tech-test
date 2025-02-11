@@ -6,8 +6,8 @@ This is a Tech Test for a financial company. See [tech task descripion](./furthe
 
 ## Running the project
 ```sh
-# run main script
-bun dev
+# run next app
+bun run dev
 
 #run tests
 bun test

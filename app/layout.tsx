@@ -15,6 +15,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>{children}</body>
     </html>
